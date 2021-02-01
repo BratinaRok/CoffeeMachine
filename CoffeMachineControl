@@ -1,0 +1,44 @@
+package machine;
+
+import java.util.Scanner;
+
+public class CoffeeMachineControl {
+
+    public static void main(String[] args) {
+
+        CoffeeMachine coffeeMachine = new CoffeeMachine(400, 540, 120, 9, 550);
+
+        boolean isOff = false;
+
+
+        Scanner input = new Scanner(System.in);
+        while (!isOff) {
+            System.out.println("Write action (buy, fill, take, remaining, exit):");
+            String choice = input.next();
+
+            switch (choice) {
+
+                case "buy":
+                    coffeeMachine.buyCoffee();
+                    break;
+                case "fill":
+                    coffeeMachine.fillMachine();
+                    break;
+                case "take":
+                    coffeeMachine.takeMoney();
+                    break;
+                case "remaining":
+                    coffeeMachine.coffeeMachineStatus();
+                    break;
+                case "exit":
+                    isOff = true;
+                    break;
+
+
+            }
+        }
+
+
+    }
+}
+
